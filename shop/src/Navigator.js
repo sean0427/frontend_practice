@@ -6,6 +6,6 @@ export default class Navigator extends Component {
             <header className="App-header">
                 <h1 className="App-title">Test App</h1>
             </header>
-        )
+        );
     }
 }
