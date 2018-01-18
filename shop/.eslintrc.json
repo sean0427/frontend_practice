@@ -1,0 +1,133 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest/globals": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true,
+            "impliedStrict": true
+        },
+        "sourceType": "module"
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "jest"
+    ],
+    "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+
+        "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "indent": [
+            "error",
+            4
+        ],
+        "indent": [
+            "warn",
+            4,
+            { "MemberExpression": 1 }
+        ],
+        "indent": [
+            "warn",
+            4,
+            { "SwitchCase": 1 }
+        ],
+        "indent": [
+            "warn",
+            4,
+            { "FunctionDeclaration": {
+                "parameters": "first"
+            }}
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+
+        "consistent-return": "warn",
+        "default-case": "warn",
+        "dot-notation": "warn",
+        "key-spacing": "warn",
+        "keyword-spacing": "warn",
+        "no-else-return": "warn",
+        "no-eval": "warn",
+        "no-var": "warn",
+        "no-multi-spaces" : "warn",
+        "no-new-wrappers": "warn",
+        "no-useless-return": "warn",
+        "prefer-arrow-callback": "warn",
+        "prefer-const": "warn",
+        "prefer-spread": "warn",
+        "prefer-template": "warn",
+
+        "array-callback-return": "error",
+        "arrow-body-style": "error",
+        "arrow-spacing": "error",
+        "block-spacing": "error",
+        "comma-dangle": ["error", "always-multiline"],
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "comma-style": ["error", "last"],
+        "computed-property-spacing": ["error", "never"],
+        "curly": [ "error", "multi", "consistent" ],
+        "dot-location": ["error", "property"],
+        "func-call-spacing": ["error", "never"],
+        "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+        "jsx-quotes": ["error", "prefer-double"],
+        "max-len": [
+            "error", 100,
+            { 
+                "ignorePattern": "^\\s*import\\s.+from\\s*",
+                "ignoreComments": true,
+                "ignoreUrls": true
+            }
+        ],
+        "max-lines": ["error", 300],
+        "max-nested-callbacks": "error",
+        "max-params": ["error", 5],
+        "no-confusing-arrow": ["error", {"allowParens": true}],
+        "no-empty-function": "error",
+        "no-lonely-if": "error",
+        "no-loop-func": "error",
+        "no-magic-numbers": [
+            "error",
+            {
+                "ignoreArrayIndexes": true,
+                "ignore": [0, 1]
+            }
+        ],
+        
+        "no-multi-assign": "error",
+        "no-multiple-empty-lines": "error",
+        "no-nested-ternary": "error",
+        "no-return-assign": "error",
+        "no-self-compare": "error",
+        "no-trailing-spaces": "error",
+        "no-unneeded-ternary": "error",
+        "no-useless-constructor": "error",
+        "no-whitespace-before-property": "error",
+        "nonblock-statement-body-position": "error",
+        "padding-line-between-statements": [ "error", { "blankLine": "always", "prev": "*", "next": "return" } ],
+        "prefer-destructuring": ["error", { "array": false, "object": true }, { "enforceForRenamedProperties": false }],
+        "semi-spacing": "error",
+        "space-before-blocks": "error",
+        "space-infix-ops": "error",
+        "template-curly-spacing": ["error", "always"]
+    }
+}
