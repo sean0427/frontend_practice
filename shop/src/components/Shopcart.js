@@ -11,13 +11,13 @@ export default class Shopcart extends React.PureComponent {
     render () {
         return (
             <div>
-                <div className="shoplist">
-                    <ul>
-                        { this.props.shoplist.map((data) => <li>{data}</li>) }
-                    </ul>
-                </div>
+                <ul className="shoplist">
+                    { this.props.shoplist.map(
+                        (data, index) => <li key={index}>{data}</li>
+                    ) }
+                </ul>
                 <input/>
-                <button onPress={this.props.onPress} />
+                <button id="shoplist-btn" onClick={this.props.onPress} />
             </div>
         )
     }
