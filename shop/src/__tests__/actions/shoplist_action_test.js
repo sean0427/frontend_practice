@@ -9,8 +9,6 @@ describe('Shoplist Action', () => {
             product: TEST_TEXT,
         };
 
-        console.log(shoplist.appendToShoplist(TEST_TEXT))
-
         expect(shoplist.appendToShoplist(TEST_TEXT))
             .toEqual(expectAction);
     });
