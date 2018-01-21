@@ -11,7 +11,8 @@ import './css/App.css';
 import reducers from './reducers';
 
 //containers
-import DataShopcart from './containers/DataShopcart.js'
+import DataNavigator from './containers/DataNavigator';
+import DataShopcart from './containers/DataShopcart'
 
 const store = createStore(
     reducers,
@@ -22,9 +23,10 @@ export default () => {
     return (
         <Provider store={store}>
             <div className="App">
+                <header> <DataNavigator /> </header>
+                <div>
                 <h2>Shopping Cart List</h2>
                 <hr />
-                <div>
                     <DataShopcart />
                 </div>
             </div>
