@@ -5,11 +5,12 @@ import Navigator from '../../components/Navigator';
 
 describe('test shopcart component', () => {
     const NUMBER = 999;
+    const HEADER_CHILDREN = 2;
 
     it('render defualt', () => {
         const wrapper = shallow(<Navigator />);
 
-        expect(wrapper.find('header').children()).toHaveLength(2);
+        expect(wrapper.find('header').children()).toHaveLength(HEADER_CHILDREN);
         expect(wrapper.find('.shopcart-number').text())
             .toEqual('0');
     });

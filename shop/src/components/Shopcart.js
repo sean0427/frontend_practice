@@ -19,6 +19,6 @@ export default class Shopcart extends React.PureComponent {
                 <input/>
                 <button id="shoplist-btn" onClick={this.props.onPress} />
             </div>
-        )
+        );
     }
 }

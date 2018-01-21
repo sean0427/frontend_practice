@@ -3,14 +3,13 @@ import { connect } from 'react-redux';
 import Shopcart from '../components/Shopcart';
 import { appendToShoplist } from '../actions/Shoplist';
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        shoplist: state.shoplist,
-    };
-};
+const mapStateToProps = (state, _) => ({
+    shoplist: state.shoplist,
+});
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    onPress: () => { dispatch(appendToShoplist('data')); }
-})
+//TODO workaround hardcode for test.
+const mapDispatchToProps = (dispatch, _) => ({
+    onPress: () => { dispatch(appendToShoplist('data')); },
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shopcart)
+export default connect(mapStateToProps, mapDispatchToProps)(Shopcart);

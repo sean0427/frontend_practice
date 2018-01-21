@@ -7,15 +7,17 @@ import { mount } from 'enzyme';
 import DataProductsList from '../../containers/DataProductsList';
 
 
+const PRICE = 10;
+
 describe('Test Data Products List Container', () => {
     const mockstore = configureStore([]);
     const initialState = {
         productsList: [
             {
-                name: "test",
-                imageSource: "source",
-                price: 10,
-            }
+                name: 'test',
+                imageSource: 'source',
+                price: PRICE,
+            },
         ],
     };
 

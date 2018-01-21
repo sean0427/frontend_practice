@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Navigator extends Component {
     static defaultProps = {
-        shopcartNumber: 0, 
+        shopcartNumber: 0,
     };
 
     render() {

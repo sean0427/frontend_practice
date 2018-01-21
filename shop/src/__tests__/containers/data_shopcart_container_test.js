@@ -10,7 +10,7 @@ import DataShopcart from '../../containers/DataShopcart.js';
 describe('test data shopcart container', () => {
     const mockstore = configureStore([]);
     const initialState = {
-        shoplist: [1, 2],
+        shoplist: [1, 0],
     };
 
     it('render defualt', () => {
@@ -24,6 +24,6 @@ describe('test data shopcart container', () => {
         expect(wrapper.find('.shoplist')).toHaveLength(1);
         expect(wrapper.find('#shoplist-btn')).toHaveLength(1);
 
-        expect(wrapper.find('.shoplist').children()).toHaveLength(2);
+        expect(wrapper.find('.shoplist').children()).toHaveLength(initialState.shoplist.length);
     });
 });

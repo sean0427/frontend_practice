@@ -10,7 +10,7 @@ import DataNavigator from '../../containers/DataNavigator';
 describe('test data shopcart container', () => {
     const mockstore = configureStore([]);
     const initialState = {
-        shoplist: [1, 2],
+        shoplist: [1, 0],
     };
 
     it('render with connect store', () => {

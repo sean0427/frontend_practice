@@ -1,5 +1,5 @@
-import * as action from '../../actions/ProductsList'
-import ProductsList from '../../reducers/ProductsList'
+import * as action from '../../actions/ProductsList';
+import ProductsList from '../../reducers/ProductsList';
 
 const TEST_ARRAY = [1, 'test'];
 
@@ -14,7 +14,7 @@ describe('Products List Reducer', () => {
             undefined,
             {
                 type: action.READ_PRODUCT_LIST,
-                list: TEST_ARRAY
+                list: TEST_ARRAY,
             }
         )).toEqual(TEST_ARRAY);
     });
@@ -24,7 +24,7 @@ describe('Products List Reducer', () => {
             [1],
             {
                 type: action.READ_PRODUCT_LIST,
-                list: TEST_ARRAY
+                list: TEST_ARRAY,
             }
         )).toEqual(TEST_ARRAY);
     });

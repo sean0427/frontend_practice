@@ -2,8 +2,8 @@ import React from 'react';
 
 export default class Product extends React.PureComponent {
     static defaultProps = {
-        imageSource: "",
-        name: "",
+        imageSource: '',
+        name: '',
         price: 0,
     };
 
@@ -16,6 +16,6 @@ export default class Product extends React.PureComponent {
                 <h5>{ name }</h5>
                 <em>{ price }</em>
             </section>
-        )
+        );
     }
 }

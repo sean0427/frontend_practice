@@ -12,24 +12,22 @@ import reducers from './reducers';
 
 //containers
 import DataNavigator from './containers/DataNavigator';
-import DataShopcart from './containers/DataShopcart'
+import DataShopcart from './containers/DataShopcart';
 
 const store = createStore(
     reducers,
     applyMiddleware(thunk)
 );
 
-export default () => {
-    return (
-        <Provider store={store}>
-            <div className="App">
-                <header> <DataNavigator /> </header>
-                <div>
+export default () => (
+    <Provider store={store}>
+        <div className="App">
+            <header> <DataNavigator /> </header>
+            <div>
                 <h2>Shopping Cart List</h2>
                 <hr />
-                    <DataShopcart />
-                </div>
+                <DataShopcart />
             </div>
-        </Provider>
-    );
-}
+        </div>
+    </Provider>
+);

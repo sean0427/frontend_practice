@@ -4,9 +4,9 @@ import renderer from 'react-test-renderer';
 
 import Product from '../../components/Product';
 
-const TEST_PROPS = { 
-    imageSource: "test.test/test.jpg",
-    name: "PRODUCT NAME",
+const TEST_PROPS = {
+    imageSource: 'test.test/test.jpg',
+    name: 'PRODUCT NAME',
     price: 10000,
 };
 

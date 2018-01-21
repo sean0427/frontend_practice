@@ -12,20 +12,21 @@ describe('test shopcart component', () => {
     });
 
     it('render list', () => {
+        const PROPS = { shoplist: ['1', '2'] };
         const wrapper = shallow(<Shopcart />);
 
         expect(wrapper.find('li')).toHaveLength(0);
 
-        wrapper.setProps({ shoplist: [1, 2] });
+        wrapper.setProps(PROPS);
 
-        expect(wrapper.find('ul.shoplist').children()).toHaveLength(2);
+        expect(wrapper.find('ul.shoplist').children()).toHaveLength(PROPS.shoplist.length);
     });
 
     it('button click', () => {
         const mockFunction = jest.fn();
         const wrapper = shallow(<Shopcart onPress= {mockFunction} />);
 
-        const button = wrapper.find('button#shoplist-btn')
+        const button = wrapper.find('button#shoplist-btn');
 
         button.simulate('click');
 

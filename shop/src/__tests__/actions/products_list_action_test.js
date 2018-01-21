@@ -1,6 +1,6 @@
-import * as productslist from '../../actions/ProductsList'
+import * as productslist from '../../actions/ProductsList';
 
-const TEST_ARRAY = ['test', 123];
+const TEST_ARRAY = ['test', '123'];
 describe('Product List Actions', () => {
     it('read', () => {
         const expectAction = {
@@ -10,5 +10,5 @@ describe('Product List Actions', () => {
 
         expect(productslist.readProductsList(TEST_ARRAY))
             .toEqual(expectAction);
-    })
+    });
 });

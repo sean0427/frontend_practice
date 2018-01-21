@@ -33,6 +33,6 @@ export default class ProductsList extends React.PureComponent {
                     )
                 ) }
             </article>
-        )
+        );
     }
 }

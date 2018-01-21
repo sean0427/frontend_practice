@@ -1,6 +1,6 @@
-import * as shoplist from '../../actions/Shoplist'
+import * as shoplist from '../../actions/Shoplist';
 
-const TEST_TEXT = "test";
+const TEST_TEXT = 'test';
 
 describe('Shoplist Action', () => {
     it('append', () => {

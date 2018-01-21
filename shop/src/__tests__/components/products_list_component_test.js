@@ -9,10 +9,10 @@ describe('Test ProductsList Component', () => {
         pageNumber: 0,
         products: [
             {
-                name: "test",
-                imageSource: "source",
+                name: 'test',
+                imageSource: 'source',
                 price: 10,
-            }
+            },
         ],
     };
 
