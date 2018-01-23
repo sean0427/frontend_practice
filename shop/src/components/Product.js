@@ -12,9 +12,9 @@ export default class Product extends React.PureComponent {
 
         return (
             <section className="product-item">
-                <img src={ imageSource } alt="product image" />
+                <img src={ imageSource } />
                 <h5>{ name }</h5>
-                <em>{ price }</em>
+                <em className="dollar">{ price }</em>
             </section>
         );
     }

@@ -1,0 +1,22 @@
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    display: flex;
+    width: 200px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: #192838;
+    margin: 1em;
+    padding: 1em;
+    background-color: #fffefc;
+}
+.product-item:hover {
+    box-shadow: 1px 1px #5d6873;
+}
+
+.dollar::before {
+    content: "$";
+}

@@ -5,30 +5,14 @@ exports[`Test Component Product check change by snapshot 1`] = `
   className="product-item"
 >
   <img
-    alt="product image"
     src=""
   />
   <h5>
     
   </h5>
-  <em>
-    0
-  </em>
-</section>
-`;
-
-exports[`Test Component Product snapshot 1`] = `
-<section
-  className="product-item"
->
-  <img
-    alt="product image"
-    src=""
-  />
-  <h5>
-    
-  </h5>
-  <em>
+  <em
+    className="dollar"
+  >
     0
   </em>
 </section>
