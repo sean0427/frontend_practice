@@ -17,6 +17,7 @@ react
 ---
 - [react](https://reactjs.org/)
 - [prop-types](https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes): react's component type check.
+- [react router](https://reacttraining.com/react-router/)(react-router-dom): router control package for react.
 
 redux
 ---
