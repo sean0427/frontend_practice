@@ -11,7 +11,7 @@ describe('test shopcart component', () => {
         const wrapper = shallow(<Navigator />);
 
         expect(wrapper.find('header').children()).toHaveLength(HEADER_CHILDREN);
-        expect(wrapper.find('.shopcart-number').text())
+        expect(wrapper.find('.shopcart-count').text())
             .toEqual('0');
     });
 
@@ -20,7 +20,7 @@ describe('test shopcart component', () => {
 
         wrapper.setProps({ shopcartNumber: NUMBER });
 
-        expect(wrapper.find('h1.shopcart-number').text())
+        expect(wrapper.find('em.shopcart-count').text())
             .toEqual(String(NUMBER));
     });
 });

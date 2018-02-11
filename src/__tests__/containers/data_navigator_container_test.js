@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import configureStore from 'redux-mock-store';
@@ -17,12 +18,14 @@ describe('test data shopcart container', () => {
         const store = mockstore(initialState);
         const wrapper = mount(
             <Provider store={store}>
-                <DataNavigator />
+                <Router>
+                    <DataNavigator />
+                </Router>
             </Provider>
         );
 
-        expect(wrapper.find('.shopcart-number')).toHaveLength(1);
-        expect(wrapper.find('.shopcart-number').text())
+        expect(wrapper.find('.shopcart-count')).toHaveLength(1);
+        expect(wrapper.find('.shopcart-count').text())
             .toEqual(String(initialState.shoplist.length));
     });
 });
