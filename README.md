@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/sean0427/frontend_practice/tree/master.svg?style=svg)](https://circleci.com/gh/sean0427/frontend_practice/tree/master)
+
 Front-End Pratice (TBD)
 ===
 Use TDD to practice how to write front-end and learn how to use react (react-redux).
