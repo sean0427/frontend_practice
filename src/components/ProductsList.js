@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Product from './Product';
+
 export default class ProductsList extends React.PureComponent {
     static defaultProps = {
         pageNumber: 0,
@@ -21,18 +22,23 @@ export default class ProductsList extends React.PureComponent {
 
     render() {
         return (
-            <article className="products-list">
-                { this.props.products.map(
-                    (product, index) => (
-                        <Product
-                            key={index}
-                            imageSource={product.imageSource}
-                            name={product.name}
-                            price={product.price}
-                        />
-                    )
-                ) }
-            </article>
+            <div>
+                <button onClick={this.props.onPress}>
+                refrash 
+                </button>
+                <article className="products-list">
+                    { this.props.products.map(
+                        (product, index) => (
+                            <Product
+                                key={index}
+                                imageSource={product.imageSource}
+                                name={product.name}
+                                price={product.price}
+                            />
+                        )
+                    ) }
+                </article>
+            </div>
         );
     }
 }
