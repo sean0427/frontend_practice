@@ -9,14 +9,12 @@ const mapStateToProps = (state, _) => ({
 const PRODUCT_TYPE_ID = 'id'
 const PRODUCT_TYPE_NAME = 'name'
 
-const ProductTypeSelector = ({productType}) => {
-    return (
-        <Selector 
-            textName={PRODUCT_TYPE_NAME}
-            valueName={PRODUCT_TYPE_ID}
-            options={productType}
-        />
-    );
-};
+const ProductTypeSelector = ({productType}) => (
+    <Selector
+        textName={PRODUCT_TYPE_NAME}
+        valueName={PRODUCT_TYPE_ID}
+        options={productType}
+    />
+);
 
 export default connect(mapStateToProps)(ProductTypeSelector);

@@ -6,6 +6,7 @@ import { mount } from 'enzyme';
 
 import ProductTypeSelector from '../../containers/ProductTypeSelector';
 import LanguageSelector from '../../containers/LanguageSelector';
+import Selector from '../../components/Selector';
 
 const PRODUCT_TYPE_STATE = {
     products: {
@@ -29,19 +30,20 @@ const LANGUAGE_STATE = {
     ],
 };
 
-const selector_test = (initialState, container) => {
-    const mockstore = configureStore({});
+const selector_test = (initialState, Container) => () => {
+    const mockstore = configureStore();
 
     it('render defualt with store', () => {
         const store = mockstore(initialState);
         const list = mount(
             <Provider store={store}>
-                <container/>
+                <Container />
             </Provider>
         );
 
-        expect(list.find('select')).toHaveLength(1);
+        expect(list.find(Selector)).toHaveLength(1);
         expect(list.find('option')).toHaveLength(2);
+        expect(list.find('select')).toHaveLength(1);
     });
 }
 

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { mount } from 'enzyme';
 
-import DataShopcart from '../../containers/DataShopcart.js';
+import DataShopcart from '../../containers/DataShopcart';
 
 
 describe('test data shopcart container', () => {

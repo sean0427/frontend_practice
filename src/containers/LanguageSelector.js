@@ -9,15 +9,13 @@ const mapStateToProps = (state, _) => ({
 const LANGUAGE_CODE = 'code'
 const LANGUAGE_NAME = 'name'
 
-const LanguageSelector = ({language}) => {
-    return (
-        <Selector 
-            name='language'
-            textName={LANGUAGE_NAME}
-            valueName={LANGUAGE_CODE}
-            options={language}
-        />
-    );
-};
+const LanguageSelector = ({language}) => (
+    <Selector
+        name='language'
+        textName={LANGUAGE_NAME}
+        valueName={LANGUAGE_CODE}
+        options={language}
+    />
+);
 
 export default connect(mapStateToProps)(LanguageSelector);
