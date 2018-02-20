@@ -28,5 +28,12 @@
     "redux-devtools": "^3.4.1",
     "react-test-renderer": "^16.2.0",
     "redux-mock-store": "^1.4.0"
+  },
+  "jest": {
+      "collectCoverageFrom": [
+          "src/registerServiceWorker.js",
+          "src/**/*.{js,jsx}",
+          "!<rootDir>/node_modules/"
+      ]
   }
 }
