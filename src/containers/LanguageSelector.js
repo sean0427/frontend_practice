@@ -12,6 +12,7 @@ const LANGUAGE_NAME = 'name'
 const LanguageSelector = ({language}) => {
     return (
         <Selector 
+            name='language'
             textName={LANGUAGE_NAME}
             valueName={LANGUAGE_CODE}
             options={language}

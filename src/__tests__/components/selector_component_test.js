@@ -6,7 +6,9 @@ import Selector from '../../components/Selector';
 
 const TEXT = 'TEXT';
 const VALUE = 'VALUE';
+
 const TEST_PROPS = {
+    name: TEXT,
     textName: TEXT,
     valueName: VALUE,
     options: [

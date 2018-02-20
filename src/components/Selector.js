@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default class Selector extends React.Component { 
+export default class Selector extends React.Component {
     static defaultProps = {
         textName: 'text',
         valueName: 'vaule',
+        name: 'title',
         options: [],
     };
 
@@ -18,26 +19,30 @@ export default class Selector extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({ selected: event.target.value }); 
+        this.setState({ selected: event.target.value });
         event.preventDefault();
     }
 
     render() {
-        const { options, valueName, textName } = this.props;
+        const { options, valueName, textName, name } = this.props;
 
-        return ( 
+        return (
             <label>
-                <select value={ this.state.selected } onChange={ this.handleChange }>
+                <select
+                    name={ name }
+                    value={ this.state.selected }
+                    onChange={ this.handleChange }
+                >
                     {
-                        options.map((value, index) => 
-                            <option 
-                                key={ index } 
+                        options.map((value, index) =>
+                            <option
+                                key={ index }
                                 value={ value[valueName] }
                             >
                                 { value[textName] }
                             </option>
                         )
-                    
+
                     }
                 </select>
             </label>
