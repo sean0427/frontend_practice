@@ -38,4 +38,17 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests
-      - run: npm test -- --coverage
+      - run:
+          name: "linter Javascript Code"
+          command: npm run eslint --format junit -o reports/junit/js-lint-results.xml src/**
+
+      - run: 
+        name: "Jest Test Suite"
+        command: npm test --coverage --testResultsProcessor="jest-junit"
+        environment:
+            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
+
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports/junit 
