@@ -18,7 +18,11 @@ export default class Navigator extends React.Component {
                     </li>
                     <li className="nav-item">
                         <Link to="/shopcart">
-                            Shopping <em className="shopcart-count">{this.props.shopcartNumber}</em> Item
+                            Shopping
+                            <em className="shopcart-count">
+                                { this.props.shopcartNumber }
+                            </em>
+                                Item
                         </Link>
                     </li>
                 </ul>

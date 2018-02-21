@@ -11,25 +11,11 @@ const headers = (method) => ({
     mode: 'cors',
 });
 
-export const fetchPost = (name) => (
-    fetch(`${ HOST }/${ name }`, headers('GET'))
-        .then(response => {
-            if (response.ok) return response.json();
+export const fetchPost = (name) => fetch(`${ HOST }/${ name }`, headers('GET'))
+    .then(response => (response.ok ? response.json() : {}));
 
-            console.log(response);
-        })
-        .catch(e => console.log(e))
-);
-
-const _fetch = (method) => (name, body) => (
-    fetch(`${ HOST }/${ name }`, headers(method))
-        .then(response => {
-            if (response.ok) return response.json();
-
-            console.log(response);
-        })
-        .catch(e => console.log(e))
-);
+const _fetch = (method) => (name, _) => fetch(`${ HOST }/${ name }`, headers(method))
+    .then(response => (response.ok ? response.json() : {}));
 
 export const post = _fetch('POST');
 export const deleteAPI = _fetch('DELECT');
