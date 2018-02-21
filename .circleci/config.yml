@@ -48,6 +48,6 @@ jobs:
           command: npm test -- --coverage --testResultsProcessor="jest-junit"
 
       - store_test_results:
-          path: reports/junit/js-test-results.xml
+          path: reports/junit
       - store_artifacts:
-          path: reports/junit/js-lint-results.xml
+          path: reports/junit
