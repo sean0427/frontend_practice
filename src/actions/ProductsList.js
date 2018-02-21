@@ -1,4 +1,4 @@
-import { getFromAPI } from './API'
+import { getFromAPI } from './API';
 
 const API_PRODUCT_NAME = 'products';
 const API_PRODCUT_TYPE = 'product_type';
@@ -14,5 +14,5 @@ export const readProductType = list => (
     { type: READ_PRODUCT_TYPE, list }
 );
 
-export const getProductsList = getFromAPI(API_PRODUCT_NAME, readProductsList)
-export const getProductType = getFromAPI(API_PRODCUT_TYPE, readProductType)
+export const getProductsList = getFromAPI(API_PRODUCT_NAME, readProductsList);
+export const getProductType = getFromAPI(API_PRODCUT_TYPE, readProductType);

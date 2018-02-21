@@ -6,12 +6,12 @@ const mapStateToProps = (state, _) => ({
     language: state.language,
 });
 
-const LANGUAGE_CODE = 'code'
-const LANGUAGE_NAME = 'name'
+const LANGUAGE_CODE = 'code';
+const LANGUAGE_NAME = 'name';
 
 const LanguageSelector = ({language}) => (
     <Selector
-        name='language'
+        name="language"
         textName={LANGUAGE_NAME}
         valueName={LANGUAGE_CODE}
         options={language}

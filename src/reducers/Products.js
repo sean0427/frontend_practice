@@ -1,8 +1,7 @@
 import { READ_PRODUCT_LIST, READ_PRODUCT_TYPE } from '../actions/ProductsList';
 
 const getProducts = (actionName) => (state = [], action) => {
-    if (action.type === actionName) 
-        return (action.list !== undefined) ? action.list : state;
+    if (action.type === actionName) return (action.list !== undefined) ? action.list : state;
 
     return state;
 };

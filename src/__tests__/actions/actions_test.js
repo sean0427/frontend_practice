@@ -1,5 +1,3 @@
-
-import fetch from 'isomorphic-fetch'
 import * as productslist from '../../actions/ProductsList';
 import * as language from '../../actions/Language';
 
@@ -11,7 +9,11 @@ jest.mock('../../actions/API', () => ({ getFromAPI: jest.fn() }));
 
 const TEST_ARRAY = ['test', '123'];
 
-const testAction = (action = '', f = ()=> {}) => () => {
+const DEFULAT_FUNCTION = () => {
+    //Not do anything
+};
+
+const testAction = (action = '', f = DEFULAT_FUNCTION) => () => {
     const expectAction = {
         type: action,
         list: TEST_ARRAY,
@@ -20,7 +22,7 @@ const testAction = (action = '', f = ()=> {}) => () => {
     expect(f(TEST_ARRAY)).toEqual(expectAction);
 };
 
-const testFetchAction = (f = () => {}) => () => {
+const testFetchAction = (f = DEFULAT_FUNCTION) => () => {
     f();
     expect(getFromAPI).toBeCalled();
 };
@@ -46,7 +48,7 @@ describe('Product Type Actions', () => {
     );
 
     it('fetch', testFetchAction(productslist.getProductType));
-})
+});
 
 describe('Language Actions', () => {
     it('read',
@@ -57,4 +59,4 @@ describe('Language Actions', () => {
     );
 
     it('fetch', testFetchAction(language.getLanguage));
-})
+});

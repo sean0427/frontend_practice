@@ -24,7 +24,7 @@ export default class ProductsList extends React.PureComponent {
         return (
             <div>
                 <button onClick={this.props.onPress}>
-                refrash 
+                refrash
                 </button>
                 <article className="products-list">
                     { this.props.products.map(

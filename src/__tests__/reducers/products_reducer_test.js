@@ -6,7 +6,7 @@ const TEST_ARRAY = [1, 'test'];
 describe('Products Reducer', () => {
     it('init', () => {
         expect(ProductsList(undefined, {}))
-            .toEqual({list: [], type:[]});
+            .toEqual({list: [], type: []});
     });
 
     it('read without state', () => {
@@ -18,7 +18,7 @@ describe('Products Reducer', () => {
             }
         )).toEqual({
             list: TEST_ARRAY,
-            type: []
+            type: [],
         });
     });
 
@@ -31,7 +31,7 @@ describe('Products Reducer', () => {
             }
         )).toEqual({
             list: TEST_ARRAY,
-            type: []
+            type: [],
         });
     });
 
@@ -44,7 +44,7 @@ describe('Products Reducer', () => {
             }
         )).toEqual({
             list: [],
-            type: TEST_ARRAY
+            type: TEST_ARRAY,
         });
     });
 
@@ -57,7 +57,7 @@ describe('Products Reducer', () => {
             }
         )).toEqual({
             list: [],
-            type: TEST_ARRAY
+            type: TEST_ARRAY,
         });
     });
 });

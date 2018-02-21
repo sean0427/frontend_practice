@@ -6,6 +6,7 @@ import Selector from '../../components/Selector';
 
 const TEXT = 'TEXT';
 const VALUE = 'VALUE';
+const ITEM_COUNT = 2;
 
 const TEST_PROPS = {
     name: TEXT,
@@ -31,7 +32,7 @@ describe('Test Component Product', () => {
 
         component.setProps(TEST_PROPS);
         const options = component.find('option');
-        expect(options).toHaveLength(2);
+        expect(options).toHaveLength(ITEM_COUNT);
     });
 
     it('check change by snapshot', () => {

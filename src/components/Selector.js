@@ -12,7 +12,7 @@ export default class Selector extends React.Component {
         super(props);
 
         this.state = {
-            selected : '',
+            selected: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -48,4 +48,4 @@ export default class Selector extends React.Component {
             </label>
         );
     }
-};
+}

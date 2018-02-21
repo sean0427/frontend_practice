@@ -6,8 +6,8 @@ const mapStateToProps = (state, _) => ({
     productType: state.products.type,
 });
 
-const PRODUCT_TYPE_ID = 'id'
-const PRODUCT_TYPE_NAME = 'name'
+const PRODUCT_TYPE_ID = 'id';
+const PRODUCT_TYPE_NAME = 'name';
 
 const ProductTypeSelector = ({productType}) => (
     <Selector

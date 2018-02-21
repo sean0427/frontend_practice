@@ -8,6 +8,7 @@ import ProductTypeSelector from '../../containers/ProductTypeSelector';
 import LanguageSelector from '../../containers/LanguageSelector';
 import Selector from '../../components/Selector';
 
+const ITEM_COUNT = 2;
 const PRODUCT_TYPE_STATE = {
     products: {
         type: [
@@ -20,7 +21,7 @@ const PRODUCT_TYPE_STATE = {
                 name: '222',
             },
         ],
-    }
+    },
 };
 
 const LANGUAGE_STATE = {
@@ -42,10 +43,14 @@ const selector_test = (initialState, Container) => () => {
         );
 
         expect(list.find(Selector)).toHaveLength(1);
-        expect(list.find('option')).toHaveLength(2);
+        expect(list.find('option')).toHaveLength(ITEM_COUNT);
         expect(list.find('select')).toHaveLength(1);
     });
-}
+};
 
-describe('Test Product type selector Container', selector_test(PRODUCT_TYPE_STATE, ProductTypeSelector));
-describe('Test LanguageSelector Container', selector_test(LANGUAGE_STATE, LanguageSelector));
+describe('Test Product type selector Container',
+    selector_test(PRODUCT_TYPE_STATE, ProductTypeSelector)
+);
+describe('Test LanguageSelector Container',
+    selector_test(LANGUAGE_STATE, LanguageSelector)
+);

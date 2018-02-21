@@ -20,7 +20,7 @@ describe('Test Data Products List Container', () => {
                     price: PRICE,
                 },
             ],
-        }
+        },
     };
 
     it('render defualt with store', () => {
