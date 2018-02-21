@@ -14,7 +14,7 @@ describe('Fetch Actions', () => {
     it('read product by id', async () => {
         const result = await fetchAction.fetchPost('products/1');
 
-        console.log(result)
+        console.log(result);
         expect(result).not.toBeNull();
     });
 });
