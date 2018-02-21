@@ -45,9 +45,9 @@ jobs:
           name: "Jest Test Suite"
           environment:
             JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
-          command: npm test --coverage --testResultsProcessor="jest-junit"
+          command: npm test -- --coverage --testResultsProcessor="jest-junit"
 
       - store_test_results:
-          path: reports/junit
+          path: reports/junit/js-test-results.xml
       - store_artifacts:
-          path: reports/junit 
+          path: reports/junit/js-lint-results.xml
