@@ -1,4 +1,4 @@
-import { fetchPost } from './Fetch';
+import { get } from './Fetch';
 
 const READ_LANGEUAGE_PRODUCT = 'READ_LANGEUAGE_PRODUCT';
 const READ_COMPANY = 'READ_COMPANY';
@@ -19,7 +19,7 @@ export const receiverLanguageProduct = list => (
 export const getFromAPI = (url, action) =>
     (size = DEFAULT_SIZE, order = 0, value = '', key = 0) =>
         async (dispatch, _getState) => {
-            const json = await fetchPost(
+            const json = await get(
                 `${ url }\
                 ?size=${ size }\
                 &order=${ order }\
