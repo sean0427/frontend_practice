@@ -1,5 +1,8 @@
+/* eslint-env node */
+
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
 /**
  * Test Setup file
  * defind by create-react-app
