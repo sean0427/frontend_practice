@@ -1,19 +1,19 @@
 [![CircleCI](https://circleci.com/gh/sean0427/frontend_practice/tree/master.svg?style=svg)](https://circleci.com/gh/sean0427/frontend_practice/tree/master)
+[![CircleCI](https://circleci.com/gh/sean0427/frontend_practice/tree/dev.svg?style=svg)](https://circleci.com/gh/sean0427/frontend_practice/tree/dev)
 
 Front-End Pratice (TBD)
 ===
-Use TDD to practice how to write front-end and learn how to use react (react-redux).
+practice how to write front-end and learn how to use react (react-redux) with **unittest**.
 
 Code Style
 ===
 - To prevent **this** problem, use arrow function, let and const.
 - ES6 Style import, export, export default.
-- aways have ;
+- aways have **;**
 
 Package
 ===
 [Nodejs](https://nodejs.org/en/): to package manager
-[Bootsrap](https://getbootstrap.com/)
 
 react
 ---
@@ -35,9 +35,15 @@ Pageage for devoploment
 - static code analizy.
 - configure on ./.eslintrc.json
 
+
 test
 ---
+- [jest](https://facebook.github.io/jest/)
+    - jest-junit: generator jest report as junit formate.
+    - jest-fetch-mock: mock fetch api for test.
+
 - [enzyme](https://github.com/airbnb/enzyme): react test utility.
+    - enzyme-adapter-react-16: for mock react16 component.
+
 - [react-test-renderer](https://www.npmjs.com/package/react-test-renderer): renderer component for jest's snapshot.
 - [redux-mock-store](https://github.com/arnaudbenard/redux-mock-store): for mock redux store.
-
