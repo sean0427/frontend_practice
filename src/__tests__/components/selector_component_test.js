@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import Selector from '../../components/Selector';
@@ -33,6 +33,12 @@ describe('Test Component Product', () => {
         component.setProps(TEST_PROPS);
         const options = component.find('option');
         expect(options).toHaveLength(ITEM_COUNT);
+    });
+
+    it('select chnage', () => {
+        const component = mount(<Selector {...TEST_PROPS } />);
+        component.find('select').simulate('change', { target: { value: 'b' }});
+        expect(component.find('select').props().value).toEqual('b');
     });
 
     it('check change by snapshot', () => {
