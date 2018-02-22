@@ -11,12 +11,10 @@ const headers = (method) => ({
     mode: 'cors',
 });
 
-export const fetchPost = (name) => fetch(`${ HOST }/${ name }`, headers('GET'))
-    .then(response => (response.ok ? response.json() : {}));
-
 const _fetch = (method) => (name, _) => fetch(`${ HOST }/${ name }`, headers(method))
-    .then(response => (response.ok ? response.json() : {}));
+    .then(response => (response.ok ? response.json() : undefined));
 
+export const get = _fetch('GET');
 export const post = _fetch('POST');
 export const deleteAPI = _fetch('DELECT');
 export const updateAPI = _fetch('UPDATE');

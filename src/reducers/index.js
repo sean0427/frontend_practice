@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
 import Shoplist from './Shoplist';
-import ProductsList from './ProductsList';
+import Products from './Products';
+import Language from './Language';
 
 export default combineReducers({
-    productsList: ProductsList,
+    products: Products,
     shoplist: Shoplist,
+    language: Language,
 });

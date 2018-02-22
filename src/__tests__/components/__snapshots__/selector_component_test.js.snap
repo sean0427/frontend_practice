@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Component Product check change by snapshot 1`] = `
+<label>
+  <select
+    name="title"
+    onChange={[Function]}
+    value=""
+  />
+</label>
+`;

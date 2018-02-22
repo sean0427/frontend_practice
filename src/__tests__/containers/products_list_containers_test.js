@@ -12,13 +12,15 @@ const PRICE = 10;
 describe('Test Data Products List Container', () => {
     const mockstore = configureStore([]);
     const initialState = {
-        productsList: [
-            {
-                name: 'test',
-                imageSource: 'source',
-                price: PRICE,
-            },
-        ],
+        products: {
+            list: [
+                {
+                    name: 'test',
+                    imageSource: 'source',
+                    price: PRICE,
+                },
+            ],
+        },
     };
 
     it('render defualt with store', () => {

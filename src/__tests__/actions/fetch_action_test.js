@@ -1,17 +1,26 @@
-import * as fetchAction from '../../actions/Fetch';
+import * as action from '../../actions/Fetch';
 
+const TEST_JSON = JSON.stringify({ 'test': 'test' });
 
-describe('Fetch Actions', () => {
-    it('read products', async () => {
+const test = f => () => {
+    it('fetch success', async () => {
 
-        const result = await fetchAction.fetchPost('products');
+        fetch.mockResponse(TEST_JSON);
+        const result = await f('products');
 
-        expect(result).not.toBeNull();
+        expect(result).toEqual(JSON.parse(TEST_JSON));
     });
 
-    it('read product by id', async () => {
-        const result = await fetchAction.fetchPost('products/1');
+    it('fetch fail', async () => {
+        fetch.mockResponse(TEST_JSON, { status: 404 });
 
-        expect(result).not.toBeNull();
+        const result = await f('products/1');
+
+        expect(result).toBeUndefined();
     });
-});
+};
+
+describe('Fetch Action Get', test(action.get));
+describe('Fetch Action Post', test(action.post));
+describe('Fetch Action Delete', test(action.deleteAPI));
+describe('Fetch Action Update', test(action.updateAPI));
