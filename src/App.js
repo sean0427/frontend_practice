@@ -16,6 +16,7 @@ import reducers from './reducers';
 import DataNavigator from './containers/DataNavigator';
 import DataShopcart from './containers/DataShopcart';
 import DataProductsList from './containers/DataProductsList';
+import RemoteLogin from './containers/RemoteLogin';
 
 const store = createStore(
     reducers,
@@ -30,6 +31,7 @@ export default () => (
                 <div>
                     <Route exact path="/" component={DataProductsList}/>
                     <Route path="/shopcart" component={DataShopcart}/>
+                    <Route path="/login" component={RemoteLogin}/>
                 </div>
             </div>
         </Router>
