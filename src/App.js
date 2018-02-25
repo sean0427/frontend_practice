@@ -1,10 +1,13 @@
 import React from 'react';
 
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+//Router
+import { Route } from 'react-router-dom';
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 
 //css
 import './css/App.css';
@@ -18,14 +21,21 @@ import DataShopcart from './containers/DataShopcart';
 import DataProductsList from './containers/DataProductsList';
 import RemoteLogin from './containers/RemoteLogin';
 
+const history = createHistory();
+
+const reducersWithRouter = combineReducers({
+    data: reducers,
+    router: routerReducer,
+});
+
 const store = createStore(
-    reducers,
-    applyMiddleware(thunk)
+    reducersWithRouter,
+    applyMiddleware(routerMiddleware(history), thunk)
 );
 
 export default () => (
     <Provider store={store}>
-        <Router>
+        <ConnectedRouter history={history}>
             <div className="App">
                 <header> <DataNavigator /> </header>
                 <div>
@@ -34,6 +44,6 @@ export default () => (
                     <Route path="/login" component={RemoteLogin}/>
                 </div>
             </div>
-        </Router>
+        </ConnectedRouter >
     </Provider>
 );

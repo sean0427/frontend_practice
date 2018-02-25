@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Shopcart from '../components/Shopcart';
 import { appendToShoplist } from '../actions/Shoplist';
 
-const mapStateToProps = (state, _) => ({
-    shoplist: state.shoplist,
+const mapStateToProps = ({ data }, _) => ({
+    shoplist: data.shoplist,
 });
 
 //TODO workaround hardcode for test.

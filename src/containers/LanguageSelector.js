@@ -5,11 +5,11 @@ const NAME = 'language';
 const LANGUAGE_CODE = 'code';
 const LANGUAGE_NAME = 'name';
 
-const mapStateToProps = (state, _) => ({
+const mapStateToProps = ({ data }, _) => ({
     name: NAME,
     textName: LANGUAGE_NAME,
     valueName: LANGUAGE_CODE,
-    options: state.language,
+    options: data.language,
 });
 
 

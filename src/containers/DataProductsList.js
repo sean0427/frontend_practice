@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import ProductsList from '../components/ProductsList';
 import { getProductsList } from '../actions/ProductsList';
 //TODO Add page filter.
-const mapStateToProps = (state, _) => ({
+const mapStateToProps = ({ data }, _) => ({
     pageNumber: 0,
-    products: state.products.list,
+    products: data.products.list,
 });
 
 const mapDispatchToProps = (dispatch, _) => ({
