@@ -1,18 +1,23 @@
+import { TOKEN_SORAGE_KEY } from './login';
+
 const HOST = 'http://127.0.0.1:5000/api';
 
-const headers = (method) => ({
-    method: method,
+const headers = (method, body) => ({
+    method,
     headers: {
         Accept: 'application/json',
         Origin: 'http://127.0.0.1',
+        Authorization: `Basic ${btoa(localStorage.getItem(TOKEN_SORAGE_KEY) + ':unused')}`,
+        'Content-Type': 'application/json',
     },
-    //TODO workaround for dev.
-    //mode: 'no-cors',
+    body,
     mode: 'cors',
 });
 
-const _fetch = (method) => (name, _) => fetch(`${ HOST }/${ name }`, headers(method))
-    .then(response => (response.ok ? response.json() : undefined));
+const _fetch = (method) =>
+    (name, body) =>
+        fetch(`${ HOST }/${ name }`, headers(method, body))
+            .then(response => (response.ok ? response.json() : undefined));
 
 export const get = _fetch('GET');
 export const post = _fetch('POST');
