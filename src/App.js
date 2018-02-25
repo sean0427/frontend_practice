@@ -26,7 +26,7 @@ import RemoteLogin from './containers/RemoteLogin';
 import RouterManager from './components/RouterManager';
 
 //manager
-import { TableCompany } from './components/ManagerTable';
+import DataManagerCompany from './containers/DataManagerCompany';
 import DataManagerProducts from './containers/DataManagerProducts';
 
 const history = createHistory();
@@ -43,7 +43,7 @@ const store = createStore(
 );
 const RouterManagerWithContainer = ({ match }) => (
     <RouterManager match={ match }>
-        <Route exact path={ `${ match.url }/company` } component={ TableCompany }/>
+        <Route exact path={ `${ match.url }/company` } component={ DataManagerCompany }/>
         <Route path={ `${ match.url }/product` } component={ DataManagerProducts }/>
     </RouterManager>
 );
