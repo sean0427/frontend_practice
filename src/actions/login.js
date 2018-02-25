@@ -1,3 +1,5 @@
+import { push } from 'react-router-redux';
+
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_STATUS_CODE = {
@@ -6,7 +8,7 @@ export const LOGIN_STATUS_CODE = {
 };
 
 const url = 'http://127.0.0.1:5000';
-const TOKEN_SORAGE_KEY = 'shop_token';
+export const TOKEN_SORAGE_KEY = 'shop_token';
 
 const loginSuccess = (email, status_code = LOGIN_STATUS_CODE.LOGOUT) => ({
     type: LOGIN_SUCCESS, email, status_code,
@@ -40,6 +42,7 @@ export const signUpUser = (email, password) =>
 
                 localStorage.setItem(TOKEN_SORAGE_KEY, token);
                 dispatch(loginSuccess(email, LOGIN_STATUS_CODE.LOGIN));
+                dispatch(push('/'));
             })
             .catch(() => {
                 dispatch(loginFail());

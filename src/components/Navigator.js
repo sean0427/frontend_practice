@@ -5,7 +5,9 @@ const dict = {
     PRODUCT_LIST: 'Product List',
     ITEM: 'Item',
     LOGIN: 'Login',
+    LOGOUT: 'Logout',
 };
+
 export default class Navigator extends React.Component {
     static defaultProps = {
         shopcartNumber: 0,
@@ -13,6 +15,7 @@ export default class Navigator extends React.Component {
     };
 
     render() {
+
         return (
             <header className="app-header">
                 <h1 className="app-title">Shop</h1>
@@ -31,11 +34,11 @@ export default class Navigator extends React.Component {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/login">
-                            { dict.LOGIN }
-                        </Link>
+                        { this.props.login_user === '' ?
+                            <Link to="/logout">{ dict.LOGOUT }</Link> :
+                            <Link to="/login">{ dict.LOGIN }</Link>
+                        }
                     </li>
-                    <h5 className="current-user">{ this.props.login_user }</h5>
                 </ul>
             </header>
         );
