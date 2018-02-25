@@ -15,11 +15,19 @@ import './css/App.css';
 //reducers
 import reducers from './reducers';
 
+import { getProductsList, getProductType } from './actions/ProductsList';
+import { getLanguage } from './actions/Language';
+
 //containers
 import DataNavigator from './containers/DataNavigator';
 import DataShopcart from './containers/DataShopcart';
 import DataProductsList from './containers/DataProductsList';
 import RemoteLogin from './containers/RemoteLogin';
+import RouterManager from './components/RouterManager';
+
+//manager
+import { TableCompany } from './components/ManagerTable';
+import DataManagerProducts from './containers/DataManagerProducts';
 
 const history = createHistory();
 
@@ -28,9 +36,16 @@ const reducersWithRouter = combineReducers({
     router: routerReducer,
 });
 
+
 const store = createStore(
     reducersWithRouter,
     applyMiddleware(routerMiddleware(history), thunk)
+);
+const RouterManagerWithContainer = ({ match }) => (
+    <RouterManager match={ match }>
+        <Route exact path={ `${ match.url }/company` } component={ TableCompany }/>
+        <Route path={ `${ match.url }/product` } component={ DataManagerProducts }/>
+    </RouterManager>
 );
 
 export default () => (
@@ -42,8 +57,13 @@ export default () => (
                     <Route exact path="/" component={DataProductsList}/>
                     <Route path="/shopcart" component={DataShopcart}/>
                     <Route path="/login" component={RemoteLogin}/>
+                    <Route path="/manager" component={RouterManagerWithContainer}/>
                 </div>
             </div>
         </ConnectedRouter >
     </Provider>
 );
+
+store.dispatch(getProductsList());
+store.dispatch(getProductType());
+store.dispatch(getLanguage());

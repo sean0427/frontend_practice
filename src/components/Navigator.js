@@ -39,6 +39,11 @@ export default class Navigator extends React.Component {
                             <Link to="/login">{ dict.LOGIN }</Link>
                         }
                     </li>
+                    <li className="nav-item">
+                        <Link to="/manager">
+                            manager
+                        </Link>
+                    </li>
                 </ul>
             </header>
         );
