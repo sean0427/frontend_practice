@@ -14,6 +14,11 @@ export const dict = {
     product_type: 'type',
     manufacturing: 'manufacturing',
     edit: 'edit',
+    submit: 'submit',
+    price: 'price',
+    publisher: 'publisher',
+    start_datetime: 'start_datetime',
+    end_datetime: 'end_datetime',
 };
 
 export const TableLanguageProduct = () => (

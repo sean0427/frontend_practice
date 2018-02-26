@@ -1,6 +1,7 @@
 import React from 'react';
 import { dict } from './index';
 
+
 const _ProductColumn = ({ id, manufacturing, type_id }) => (
     <tr key={ id }>
         <td>{ id }</td>
@@ -10,17 +11,26 @@ const _ProductColumn = ({ id, manufacturing, type_id }) => (
     </tr>
 );
 
-export default (productsList) => (
-    <table>
-        <tr>
-            <th>{ dict.id }</th>
-            <th>{ dict.manufacturing }</th>
-            <th>{ dict.product_type }</th>
-            <th>{ dict.edit }</th>
-        </tr>
-        {  productsList.map(product => _ProductColumn(product)) }
-        <tr>
-            <th><input /></th>
-        </tr>
-    </table>
+export default ({ productsList = [], children }) => (
+    <div>
+        <table className="manger-product-table">
+            <thead>
+                <tr>
+                    <th>{ dict.id }</th>
+                    <th>{ dict.manufacturing }</th>
+                    <th>{ dict.product_type }</th>
+                    <th>{ dict.edit }</th>
+                </tr>
+            </thead>
+            <tbody>
+                {  productsList.map(product => _ProductColumn(product)) }
+                <tr>
+                    <th><input /></th>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            { children }
+        </div>
+    </div>
 );
