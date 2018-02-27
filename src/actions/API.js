@@ -1,7 +1,7 @@
 import { get, post } from './Fetch';
 
-const READ_LANGEUAGE_PRODUCT = 'READ_LANGEUAGE_PRODUCT';
-const READ_COMPANY = 'READ_COMPANY';
+const RECEIVE_LANGEUAGE_PRODUCT = 'RECEIVE_LANGEUAGE_PRODUCT';
+const RECEIVE_COMPANY = 'RECEIVE_COMPANY';
 
 const API_COMPANY = 'companies';
 const API_LANGUAGE_PRODUCT = 'language_products';
@@ -9,13 +9,12 @@ const API_PRODUCT_INFORMATION = 'product_info';
 //const DEFAULT_SIZE = 10;
 // receive sattus change. does'not contorl data.
 
-export const receiverCompaniseList = list => (
-    { type: READ_COMPANY, list }
+const receiveAPIsList = type => list => (
+    { type: type, list }
 );
 
-export const receiverLanguageProduct = list => (
-    { type: READ_LANGEUAGE_PRODUCT, list }
-);
+export const receiveCompaniseList = receiveAPIsList(RECEIVE_COMPANY);
+export const receiveLanguageProduct = receiveAPIsList(RECEIVE_LANGEUAGE_PRODUCT);
 
 const handleFetch = (method = get) =>
     (url, action) =>
@@ -29,8 +28,8 @@ const handleFetch = (method = get) =>
             };
 
 export const getFromAPI = handleFetch(get);
-export const getCompanyList = getFromAPI(API_COMPANY, receiverCompaniseList);
-export const getLanguageProduct = getFromAPI(API_LANGUAGE_PRODUCT, receiverLanguageProduct);
+export const getCompanyList = getFromAPI(API_COMPANY, receiveCompaniseList);
+export const getLanguageProduct = getFromAPI(API_LANGUAGE_PRODUCT, receiveLanguageProduct);
 
 export const insertNew = handleFetch(post);
 export const insertCompany = insertNew(API_COMPANY,
