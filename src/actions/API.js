@@ -1,7 +1,8 @@
 import { get, post } from './Fetch';
 
-const RECEIVE_LANGEUAGE_PRODUCT = 'RECEIVE_LANGEUAGE_PRODUCT';
-const RECEIVE_COMPANY = 'RECEIVE_COMPANY';
+export const RECEIVE_LANGEUAGE_PRODUCT = 'RECEIVE_LANGEUAGE_PRODUCT';
+export const RECEIVE_COMPANY = 'RECEIVE_COMPANY';
+export const RECEIVE_PRODUCT_INFORMATION = 'RECEIVE_PRODUCT_INFORMATION';
 
 const API_COMPANY = 'companies';
 const API_LANGUAGE_PRODUCT = 'language_products';
@@ -15,6 +16,7 @@ const receiveAPIsList = type => list => (
 
 export const receiveCompaniseList = receiveAPIsList(RECEIVE_COMPANY);
 export const receiveLanguageProduct = receiveAPIsList(RECEIVE_LANGEUAGE_PRODUCT);
+export const receiveProductInformation = receiveAPIsList(RECEIVE_PRODUCT_INFORMATION);
 
 const handleFetch = (method = get) =>
     (url, action) =>
@@ -30,6 +32,7 @@ const handleFetch = (method = get) =>
 export const getFromAPI = handleFetch(get);
 export const getCompanyList = getFromAPI(API_COMPANY, receiveCompaniseList);
 export const getLanguageProduct = getFromAPI(API_LANGUAGE_PRODUCT, receiveLanguageProduct);
+export const getProductInformation = getFromAPI(API_PRODUCT_INFORMATION, receiveProductInformation);
 
 export const insertNew = handleFetch(post);
 export const insertCompany = insertNew(API_COMPANY,
