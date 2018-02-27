@@ -11,7 +11,6 @@ export default class Manager extends React.Component {
             //default no do anything.
         },
         list: [],
-        data: {},
     }
 
     static propTypes = {
@@ -22,7 +21,6 @@ export default class Manager extends React.Component {
         super(props);
 
         this.state = {
-            data: {},
             current: 0,
             isNewItem: true,
         };
@@ -33,7 +31,8 @@ export default class Manager extends React.Component {
     }
 
     render() {
-        const { Table, Detail, onSubmit } = this.props;
+        const { Table, Detail, onSubmit, list } = this.props;
+        const data = list[this.state.current];
 
         const child = this.props.children != undefined
             ? (<div className="container">{ this.props.children }</div>)
@@ -48,7 +47,10 @@ export default class Manager extends React.Component {
                     />
                 </div>
                 <div className="container">
-                    <Detail onSubmit={ onSubmit } />
+                    <Detail
+                        onSubmit={ onSubmit }
+                        { ...data }
+                    />
                 </div>
                 { child }
             </section>

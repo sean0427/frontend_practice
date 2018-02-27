@@ -14,10 +14,10 @@ export default class CompanyDetails extends React.Component {
         super(props);
 
         this.state = {
-            name: this.props.name,
-            address: this.props.address,
-            telephone: this.props.telephone,
-            contant_person_name: this.props.contant_person_name,
+            name: props.name,
+            address: props.address,
+            telephone: props.telephone,
+            contant_person_name: props.contant_person_name,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,17 +35,28 @@ export default class CompanyDetails extends React.Component {
         this.props.onSubmit(JSON.stringify(this.state));
     }
 
+    componentWillReceiveProps(props) {
+        this.setState({
+            name: props.name,
+            address: props.address,
+            telephone: props.telephone,
+            contant_person_name: props.contant_person_name,
+        });
+    }
+
     render() {
         const { CompanyItem } = this;
 
         return (
             <form className="manger-detail company" onSubmit={this.handleSubmit} >
                 <ul className="details">
-                    <CompanyItem title={dict.name} name="name" />
-                    <CompanyItem title={dict.address} name="address" />
-                    <CompanyItem title={dict.telephone} name="telephone" />
+                    <CompanyItem title={dict.name} name="name" value={ this.state.name } />
+                    <CompanyItem title={dict.address} name="address" value={ this.state.address }/>
+                    <CompanyItem title={dict.telephone} name="telephone" value={ this.state.telephone }/>
                     <CompanyItem title={dict.contant_person_name}
-                        name="contant_person_name" />
+                        name="contant_person_name"
+                        value={ this.state.contant_person_name }
+                    />
                 </ul>
                 <input type="submit" value={ dict.submit }/>
             </form>
