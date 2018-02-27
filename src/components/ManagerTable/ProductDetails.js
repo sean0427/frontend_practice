@@ -50,7 +50,7 @@ export default class ProductDetails extends React.Component {
         const { ProductItem } = this;
 
         return (
-            <div>
+            <div className="container">
                 <form className="manger-detail product" onSubmit={this.handleSubmit} >
                     { this.props.children }
                     <ul className="details">

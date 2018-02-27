@@ -1,0 +1,18 @@
+.manager {
+    display: flex;
+    flex-direction: row;
+}
+.container {
+    padding: 10px;
+    flex: 1 1 300px;
+}
+
+table {
+    border-radius: 0.2em;
+    border-color: #192838;
+    border: 1px solid;
+}
+
+li {
+    list-style: none;
+}

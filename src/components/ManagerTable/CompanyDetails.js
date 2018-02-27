@@ -39,18 +39,16 @@ export default class CompanyDetails extends React.Component {
         const { CompanyItem } = this;
 
         return (
-            <div>
-                <form className="manger-detail company" onSubmit={this.handleSubmit} >
-                    <ul className="details">
-                        <CompanyItem title={dict.name} name="name" />
-                        <CompanyItem title={dict.address} name="address" />
-                        <CompanyItem title={dict.telephone} name="telephone" />
-                        <CompanyItem title={dict.contant_person_name}
-                            name="contant_person_name" />
-                    </ul>
-                    <input type="submit" value={ dict.submit }/>
-                </form>
-            </div>
+            <form className="manger-detail company" onSubmit={this.handleSubmit} >
+                <ul className="details">
+                    <CompanyItem title={dict.name} name="name" />
+                    <CompanyItem title={dict.address} name="address" />
+                    <CompanyItem title={dict.telephone} name="telephone" />
+                    <CompanyItem title={dict.contant_person_name}
+                        name="contant_person_name" />
+                </ul>
+                <input type="submit" value={ dict.submit }/>
+            </form>
         );
     }
 }
