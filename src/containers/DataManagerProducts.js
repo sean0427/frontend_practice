@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { insertNewProduct } from '../actions/API';
+import { insertNewProduct } from '../actions/Manager';
 import LanguageSelector from './LanguageSelector';
 import { ProductsTable } from '../components/ManagerTable';
 import { default as Details } from '../components/ManagerTable/ProductDetails';

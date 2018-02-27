@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { insertCompany } from '../actions/API';
+import { insertCompany } from '../actions/Manager';
 
 import CompanyDetails from '../components/ManagerTable/CompanyDetails';
 
