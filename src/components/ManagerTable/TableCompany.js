@@ -14,9 +14,9 @@ const TableCompany = ({ list, onPress, current }) => (
         </tr></thead>
         <tbody>
             { list.map(data => (
-                <tr key={data.id} 
+                <tr key={data.id}
                     onClick={ () => { onPress(data.id); } }
-                    className={ current === data.id ? 'enable' : ''  }
+                    className={ current === data.id ? 'enable' : '' }
                 >
                     <td>{data.name}</td>
                     <td>{data.address}</td>

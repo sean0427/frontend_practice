@@ -88,8 +88,8 @@ export default class CompanyDetails extends React.Component {
                     />
                 </ul>
                 <div>
-                    <button 
-                        disabled={this.props.isCreate} 
+                    <button
+                        disabled={this.props.isCreate}
                         onClick={ this.handleDelete }>
                         { dict.delete }
                     </button>

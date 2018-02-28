@@ -1,5 +1,7 @@
 import React from 'react';
 
+const HUNDUR_PERCERENT = 100;
+
 export default class Product extends React.PureComponent {
     static defaultProps = {
         name: '',
@@ -8,7 +10,7 @@ export default class Product extends React.PureComponent {
         describe: '',
         product_id: 0,
         discounted_product_id: 0,
-        discount: 1, 
+        discount: 1,
     };
 
     render() {
@@ -20,7 +22,7 @@ export default class Product extends React.PureComponent {
                 <h5>{ name }</h5>
                 <div className="describe">{ describe }</div>
                 <em className="dollar">
-                    { discount == 1 ? price : discount * price / 100 }
+                    { discount == 1 ? price : discount * price / HUNDUR_PERCERENT }
                 </em>
             </section>
         );

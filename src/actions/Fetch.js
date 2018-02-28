@@ -7,7 +7,7 @@ const get_headers = (method) => ({
     headers: {
         Accept: 'application/json',
         Origin: 'http://127.0.0.1',
-        Authorization: `Basic ${ btoa(localStorage.getItem(TOKEN_SORAGE_KEY) + ':unused') }`,
+        Authorization: `Basic ${ btoa(`${ localStorage.getItem(TOKEN_SORAGE_KEY) }:unused`) }`,
         'Content-Type': 'application/json',
     },
     mode: 'cors',
