@@ -9,23 +9,24 @@ const dict = {
 };
 
 export default ({ match, children }) => (
-    <div>
-        <h2>dict.manager</h2>
-        <ul>
-            <li>
-                <Link to={`${ match.url }/company`}>
-                    { dict.company }
-                </Link>
-            </li>
-            <li>
-                <Link to={`${ match.url }/product`}>
-                    { dict.product }
-                </Link>
-            </li>
-        </ul>
+    <div className="nav-wrapper wrapper">
+        <div className="sub-header">
+            <h2>{ dict.manager }</h2>
+            <ul>
+                <li className="nav-item">
+                    <Link to={`${ match.url }/company`}>
+                        { dict.company }
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to={`${ match.url }/product`}>
+                        { dict.product }
+                    </Link>
+                </li>
+            </ul>
+        </div>
         <div>
             {children}
         </div>
     </div>
-
 );

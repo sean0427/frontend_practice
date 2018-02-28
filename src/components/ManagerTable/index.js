@@ -3,7 +3,6 @@ import React from 'react';
 import ProductsTable from './ProductsTable';
 import TableCompany from './TableCompany';
 
-import '../../css/Manager.css';
 
 export const dict = {
     id: 'id',

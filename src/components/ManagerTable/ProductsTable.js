@@ -12,7 +12,7 @@ const _ProductColumn = ({ id, manufacturing, type_id }) => (
 );
 
 export default ({ productsList = [], children }) => (
-    <div className="container">
+    <div >
         <table className="manger-product-table">
             <thead>
                 <tr>

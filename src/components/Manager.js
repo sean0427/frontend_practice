@@ -2,6 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import '../css/Manager.css';
+
 export default class Manager extends React.Component {
     static defaultProps = {
         onMount: () => {

@@ -64,7 +64,7 @@ export default class App extends React.Component {
                 <ConnectedRouter history={history}>
                     <div className="App">
                         <header> <DataNavigator /> </header>
-                        <div>
+                        <div className="wrapper">
                             <Route exact path="/" component={DataProductsList}/>
                             <Route path="/shopcart" component={DataShopcart}/>
                             <Route path="/login" component={RemoteLogin}/>
