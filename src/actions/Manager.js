@@ -18,7 +18,14 @@ export const insertCompany = insertNew(API_COMPANY, receiveManagerMessage);
 export const deleteCompany = remove(API_COMPANY, receiveManagerMessage);
 export const updateCompany = update(API_COMPANY, receiveManagerMessage);
 
-export const insertNewProduct = update(API_PRODUCT_INFORMATION, receiveManagerMessage);
+export const insertProduct
+    = insertNew(API_PRODUCT_INFORMATION, receiveManagerMessage);
+export const deleteProduct
+    = remove(API_PRODUCT_INFORMATION, receiveManagerMessage);
+export const updateProduct
+    = update(API_PRODUCT_INFORMATION, receiveManagerMessage);
 
-export const getManagerCompanyData = getFromAPI(API_COMPANY, receiveManagerData);
-export const getManagerProductInformation = getFromAPI(API_PRODUCT_INFORMATION, receiveManagerData);
+export const getManagerCompanyData
+    = getFromAPI(API_COMPANY, receiveManagerData);
+export const getManagerProductInformation
+    = getFromAPI(API_PRODUCT_INFORMATION, receiveManagerData);

@@ -41,7 +41,6 @@ export default class CompanyDetails extends React.Component {
             telephone: '',
             contant_person_name: '',
         });
-
     }
 
     handleChange(event) {

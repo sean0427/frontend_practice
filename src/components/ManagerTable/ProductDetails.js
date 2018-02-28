@@ -8,9 +8,16 @@ import BasicItem from './BasicItem';
  */
 export default class ProductDetails extends React.Component {
     static defaultProps = {
-        onSubmit: () => {
+        onCreateNew: () => {
             //default no do anything.
         },
+        onUpdate: () => {
+            //default no do anything.
+        },
+        onDelete: () => {
+            //default no do anything.
+        },
+        isCreate: true,
     };
 
     constructor(props) {
@@ -33,7 +40,23 @@ export default class ProductDetails extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleClear = this.handleClear.bind(this);
         this.ProductItem = BasicItem(this.handleChange);
+    }
+
+    handleClear() {
+        this.setState({
+            name: '',
+            address: '',
+            telephone: '',
+            contant_person_name: '',
+        });
+    }
+
+    handleDelete(event) {
+        event.preventDefault();
+        this.props.onDelete(this.props.id);
     }
 
     handleChange(event) {
@@ -43,7 +66,8 @@ export default class ProductDetails extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.onSubmit(JSON.stringify(this.state));
+        if (this.props.isCreate) this.props.onCreateNew(JSON.stringify(this.state));
+        else this.props.onUpdate(JSON.stringify(this.state), this.props.id);
     }
 
     render() {
@@ -66,7 +90,15 @@ export default class ProductDetails extends React.Component {
                             title={dict.end_datetime} name="end_datetime" />
 
                     </ul>
-                    <input type="submit" value={ dict.submit }/>
+                    <button
+                        disabled={this.props.isCreate}
+                        onClick={ this.handleDelete }>
+                        { dict.delete }
+                    </button>
+                    <button onClick={ this.handleClear }>{ dict.clear }</button>
+                    <input
+                        type="submit"
+                        value={ this.props.isCreate ? dict.create : dict.update }/>
                 </form>
             </div>);
     }
