@@ -1,3 +1,10 @@
+@import '../../node_modules/reset-css/reset.css';
+
+html, body, #root, .App, .wrapper {
+    min-height: 100% !important;
+    height: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -14,14 +21,45 @@
 }
 
 .nav-item {
-    display: inline;
-    margin: 1em;
+    display: inline-block;
+    margin: 0.5em;
     padding: 0.5em;
     background-color: #fffefc;
     border-radius: 5px;
-    max-width: 500px;
+    width: 80px;
+    height: 18px;
     font-color: #ffff;
     list-style: none;
+    font-size: 0.8em;
+    
+}
+
+@media max-width: 800 {
+    .nav-wrapper {
+        display: flex;
+    }
+}
+
+@media screen, min-width: 800 {
+    .nav-wrapper {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+    }
+
+    .sub-header {
+        height: 100%;
+    }
+}
+
+.sub-header {
+    display: block;
+    background-color: #376062;
+}
+
+.sub-header h2 {
+    color: white;
+    font-size: 1em;
+    padding: 4px 0;
 }
 
 .shopcart-count {
@@ -29,7 +67,6 @@
     font-color: #ff0000;
 }
 
-
 .nav-item:hover {
-    background-color: #eeeeff;
+    background-color: #E7DDC9;
 }

@@ -9,11 +9,11 @@ describe('Products Reducer', () => {
             .toEqual({list: [], type: []});
     });
 
-    it('read without state', () => {
+    it('receive without state', () => {
         expect(ProductsList(
             undefined,
             {
-                type: action.READ_PRODUCT_LIST,
+                type: action.RECEIVE_PRODUCT_LIST,
                 list: TEST_ARRAY,
             }
         )).toEqual({
@@ -22,11 +22,11 @@ describe('Products Reducer', () => {
         });
     });
 
-    it('read with state', () => {
+    it('receive with state', () => {
         expect(ProductsList(
             [1],
             {
-                type: action.READ_PRODUCT_LIST,
+                type: action.RECEIVE_PRODUCT_LIST,
                 list: TEST_ARRAY,
             }
         )).toEqual({
@@ -35,11 +35,11 @@ describe('Products Reducer', () => {
         });
     });
 
-    it('read type without state', () => {
+    it('receive type without state', () => {
         expect(ProductsList(
             undefined,
             {
-                type: action.READ_PRODUCT_TYPE,
+                type: action.RECEIVE_PRODUCT_TYPE,
                 list: TEST_ARRAY,
             }
         )).toEqual({
@@ -48,11 +48,11 @@ describe('Products Reducer', () => {
         });
     });
 
-    it('read type with state', () => {
+    it('receive type with state', () => {
         expect(ProductsList(
             [1],
             {
-                type: action.READ_PRODUCT_TYPE,
+                type: action.RECEIVE_PRODUCT_TYPE,
                 list: TEST_ARRAY,
             }
         )).toEqual({

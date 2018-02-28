@@ -28,10 +28,10 @@ const testFetchAction = (f = DEFULAT_FUNCTION) => () => {
 };
 
 describe('Product List Actions', () => {
-    it('read product list',
+    it('receive product list',
         testAction(
-            productslist.READ_PRODUCT_LIST,
-            productslist.readProductsList
+            productslist.RECEIVE_PRODUCT_LIST,
+            productslist.receiveProductsList
         )
     );
 
@@ -41,9 +41,9 @@ describe('Product List Actions', () => {
 });
 
 describe('Product Type Actions', () => {
-    it('read',
-        testAction(productslist.READ_PRODUCT_TYPE,
-            productslist.readProductType
+    it('receive',
+        testAction(productslist.RECEIVE_PRODUCT_TYPE,
+            productslist.receiveProductType
         )
     );
 
@@ -51,7 +51,7 @@ describe('Product Type Actions', () => {
 });
 
 describe('Language Actions', () => {
-    it('read',
+    it('receive',
         testAction(
             language.RECEVIE_LANGUAGE,
             language.recevieLanguage

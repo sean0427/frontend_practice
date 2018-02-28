@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import ProductsList from '../components/ProductsList';
-import { getProductsList } from '../actions/ProductsList';
+import { getProductInformation } from '../actions/API';
 //TODO Add page filter.
 const mapStateToProps = ({ data }, _) => ({
     pageNumber: 0,
@@ -9,7 +9,7 @@ const mapStateToProps = ({ data }, _) => ({
 });
 
 const mapDispatchToProps = (dispatch, _) => ({
-    onPress: () => { dispatch(getProductsList()); },
+    onPress: () => { dispatch(getProductInformation()); },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsList);

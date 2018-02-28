@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Navigator from '../components/Navigator.js';
+import Navigator from '../components/Navigator';
 
 const mapStateToProps = ({ data }) => ({
     shopcartNumber: data.shoplist.length,
