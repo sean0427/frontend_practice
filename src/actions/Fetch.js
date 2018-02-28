@@ -25,5 +25,5 @@ const _fetch = (method) =>
 
 export const get = _fetch('GET');
 export const post = _fetch('POST');
-export const deleteAPI = _fetch('DELECT');
-export const updateAPI = _fetch('UPDATE');
+export const deleteAPI = _fetch('DELETE');
+export const updateAPI = _fetch('PUT');
