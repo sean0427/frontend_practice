@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { insertCompany, getManagerCompanyData } from '../actions/Manager';
+import { insertCompany, getManagerCompanyData, updateCompany, deleteCompany } from '../actions/Manager';
 
 import CompanyDetails from '../components/ManagerTable/CompanyDetails';
 import Manager from '../components/Manager';
@@ -13,7 +13,9 @@ const mapStateToProps = ({ data }, _) => ({
 });
 
 const mapDispatchToProps = (dispatch, _) => ({
-    onSubmit: (data) => { dispatch(insertCompany('', data)); },
+    onCreateNew: data => { dispatch(insertCompany('', data)); },
+    onUpdate: (data, id) => { dispatch(updateCompany('', data, id)); },
+    onDelete: id => { dispatch(deleteCompany('', '', id)); },
     onMount: () => { dispatch(getManagerCompanyData()); },
 });
 

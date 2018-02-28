@@ -1,4 +1,4 @@
-import { get, post } from './Fetch';
+import { get, post, updateAPI, deleteAPI } from './Fetch';
 
 export const RECEIVE_LANGEUAGE_PRODUCT = 'RECEIVE_LANGEUAGE_PRODUCT';
 export const RECEIVE_COMPANY = 'RECEIVE_COMPANY';
@@ -20,9 +20,14 @@ export const receiveProductInformation = receiveAPIsList(RECEIVE_PRODUCT_INFORMA
 
 const handleFetch = (method = get) =>
     (url, action) =>
-        (query = '', data = '') =>
+        (query = '', data = '', id = '') =>
             async (dispatch, _getState) => {
-                const json = await method(`${ url }?${ query }`, data);
+                let _url = url;
+
+                if (id !== '') _url = `${ url }/${ id }`;
+                if (query !== '') _url = `${ url }?${ query }`;
+
+                const json = await method(_url, data);
 
                 return json !== undefined
                     ? dispatch(action(json))
@@ -35,3 +40,5 @@ export const getLanguageProduct = getFromAPI(API_LANGUAGE_PRODUCT, receiveLangua
 export const getProductInformation = getFromAPI(API_PRODUCT_INFORMATION, receiveProductInformation);
 
 export const insertNew = handleFetch(post);
+export const remove = handleFetch(deleteAPI);
+export const update = handleFetch(updateAPI);

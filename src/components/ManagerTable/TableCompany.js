@@ -4,7 +4,7 @@ import { dict } from './';
 
 import PropTypes from 'prop-types';
 
-const TableCompany = ({ list, onPress }) => (
+const TableCompany = ({ list, onPress, current }) => (
     <table>
         <thead><tr>
             <th>{ dict.name }</th>
@@ -14,7 +14,10 @@ const TableCompany = ({ list, onPress }) => (
         </tr></thead>
         <tbody>
             { list.map(data => (
-                <tr key={data.id} onClick={ () => { onPress(data.id); } }>
+                <tr key={data.id} 
+                    onClick={ () => { onPress(data.id); } }
+                    className={ current === data.id ? 'enable' : ''  }
+                >
                     <td>{data.name}</td>
                     <td>{data.address}</td>
                     <td>{data.telephone}</td>

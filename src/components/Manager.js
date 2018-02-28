@@ -4,12 +4,20 @@ import PropTypes from 'prop-types';
 
 import '../css/Manager.css';
 
+const NO_INDEX = -1;
+
 export default class Manager extends React.Component {
     static defaultProps = {
         onMount: () => {
             //default no do anything.
         },
-        onSubmit: () => {
+        onCreateNew: () => {
+            //default no do anything.
+        },
+        onUpdate: () => {
+            //default no do anything.
+        },
+        onDelete: () => {
             //default no do anything.
         },
         list: [],
@@ -23,7 +31,7 @@ export default class Manager extends React.Component {
         super(props);
 
         this.state = {
-            current: 0,
+            current: NO_INDEX,
             isNewItem: true,
         };
     }
@@ -33,8 +41,9 @@ export default class Manager extends React.Component {
     }
 
     render() {
-        const { Table, Detail, onSubmit, list } = this.props;
-        const data = list[this.state.current];
+        const { Table, Detail, list, onCreateNew, onUpdate, onDelete } = this.props;
+        const { current } = this.state;
+        const data = list[current];
 
         const child = this.props.children != undefined
             ? (<div className="container">{ this.props.children }</div>)
@@ -45,12 +54,17 @@ export default class Manager extends React.Component {
                 <div className="container">
                     <Table
                         list={ this.props.list }
-                        onPress={ index => this.setState({ current: index }) }
+                        onPress={ index => this.setState({
+                            current: index === current ? NO_INDEX : index }) }
+                        current={ current }
                     />
                 </div>
                 <div className="container">
                     <Detail
-                        onSubmit={ onSubmit }
+                        onCreateNew={ onCreateNew }
+                        onUpdate={ onUpdate }
+                        onDelete={ onDelete }
+                        isCreate={ current === NO_INDEX }
                         { ...data }
                     />
                 </div>

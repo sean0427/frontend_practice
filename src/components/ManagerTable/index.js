@@ -21,6 +21,10 @@ export const dict = {
     publisher: 'publisher',
     start_datetime: 'start_datetime',
     end_datetime: 'end_datetime',
+    create: 'create',
+    update: 'update',
+    clear: 'clear',
+    delete: 'delete',
 };
 
 export const TableLanguageProduct = () => (
