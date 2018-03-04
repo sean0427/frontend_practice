@@ -1,10 +1,10 @@
-import { LOGIN_FAIL, LOGIN_SUCCESS, LOGIN_STATUS_CODE } from '../actions/login';
+import { LOGIN_OUT, LOGIN_SUCCESS, LOGIN_STATUS_CODE } from '../actions/login';
 
 function email(state = '', action) {
     switch (action.type) {
     case LOGIN_SUCCESS:
         return action.email;
-    case LOGIN_FAIL:
+    case LOGIN_OUT:
         return '';
     default:
         return state;
@@ -13,6 +13,7 @@ function email(state = '', action) {
 
 function user_state(state = LOGIN_STATUS_CODE.LOGOUT, action) {
     if (action.type === LOGIN_SUCCESS) return action.status_code;
+    else if (action.type === LOGIN_OUT) return LOGIN_STATUS_CODE.LOGOUT;
 
     return state;
 }

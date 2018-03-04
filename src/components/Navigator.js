@@ -11,11 +11,17 @@ const dict = {
 export default class Navigator extends React.Component {
     static defaultProps = {
         shopcartNumber: 0,
-        login_user: '',
+        checkLogin: () => {
+            //default do noting.
+        },
+        isLogin: false,
     };
 
-    render() {
+    componentWillMount() {
+        this.props.checkLogin();
+    }
 
+    render() {
         return (
             <header className="app-header">
                 <h1 className="app-title">Shop</h1>
@@ -34,8 +40,8 @@ export default class Navigator extends React.Component {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        { this.props.login_user === '' ?
-                            <Link to="/logout">{ dict.LOGOUT }</Link> :
+                        { this.props.isLogin ?
+                            <em onClick={ this.props.onLogout }>{ dict.LOGOUT }</em> :
                             <Link to="/login">{ dict.LOGIN }</Link>
                         }
                     </li>

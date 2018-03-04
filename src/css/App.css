@@ -28,7 +28,7 @@ html, body, #root, .App, .wrapper {
     border-radius: 5px;
     width: 80px;
     height: 18px;
-    font-color: #ffff;
+    color: #000;
     list-style: none;
     font-size: 0.8em;
     

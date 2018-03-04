@@ -1,10 +1,17 @@
 import { connect } from 'react-redux';
 
 import Navigator from '../components/Navigator';
+import { checkLogin, LOGIN_STATUS_CODE, logout } from '../actions/login';
 
 const mapStateToProps = ({ data }) => ({
     shopcartNumber: data.shoplist.length,
-    login_user: data.user.email,
+    isLogin: data.user.user_state === LOGIN_STATUS_CODE.LOGIN,
+
 });
 
-export default connect(mapStateToProps)(Navigator);
+const mapDispatchToProps = (dispatch, _) => ({
+    checkLogin: () => { dispatch(checkLogin()); },
+    onLogout: () => { dispatch(logout()); },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigator);
